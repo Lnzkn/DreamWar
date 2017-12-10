@@ -10,10 +10,11 @@ import org.springframework.stereotype.Repository;
 
 import org.starrier.domain.User;
 
-@Repository
+@Repository // 定义一个DAO
 public class UserDao {
 	private JdbcTemplate jdbcTemplate;
 
+	/* 根据用户名查找用户的SQL 语句*/
 	private  final static String MATCH_COUNT_SQL = " SELECT count(*) FROM t_user  " +
 			" WHERE user_name =? and password=? ";
 	private  final static String UPDATE_LOGIN_INFO_SQL = " UPDATE t_user SET " +
@@ -29,6 +30,7 @@ public class UserDao {
 				+ " FROM t_user WHERE user_name =? ";
 		final User user = new User();
 		jdbcTemplate.query(sqlStr, new Object[] { userName },
+				/*  匿名类方式实现的回调函数 */
 				new RowCallbackHandler() {
 					public void processRow(ResultSet rs) throws SQLException {
 						user.setUserId(rs.getInt("user_id"));
@@ -44,7 +46,7 @@ public class UserDao {
 				user.getLastIp(),user.getCredits(),user.getUserId()});
 	}
 
-	@Autowired
+	@Autowired  //自动注入  JdbcTemplate 的bean
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}

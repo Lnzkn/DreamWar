@@ -4,27 +4,43 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:SpringMVC-context.xml</param-value>
   </context-param>
+
+  <!-- 负责启动Spring容器的监听器， 它将引用配置文件上下文参数获得Spring 配置文件的地址-->
   <listener>
     <listener-class>
       org.springframework.web.context.ContextLoaderListener
     </listener-class>
   </listener>
 
+  <!--Spring MVC 的主控 Servlet-->
   <servlet>
+    <!--Servlet 的名称-->
     <servlet-name>SpringMVC</servlet-name>
+    <!-- Servlet 对应的java类-->
     <servlet-class>
       org.springframework.web.servlet.DispatcherServlet
     </servlet-class>
-    <load-on-startup>3</load-on-startup>
+    <!-- 当前Servlet 的参数信息-->
+    <init-param>
+      <!-- contextConfigLocation 是参数名称 该参数的值包含SpringMVC 的配置文件路径-->
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/SpringMVC-servlet.xml</param-value>
+    </init-param>
+    <!--在web应用启动时 立即加载 Servlet-->
+    <load-on-startup>1</load-on-startup>
   </servlet>
 
+  <!--Servlet 映射声明-->
   <servlet-mapping>
+    <!-- 请求对应的Servlet名称 -->
     <servlet-name>SpringMVC</servlet-name>
-    <url-pattern>/</url-pattern>
+    <!--监听当前域的所有请求 -->
+    <url-pattern>*.html</url-pattern>
   </servlet-mapping>
 
  <welcome-file-list>

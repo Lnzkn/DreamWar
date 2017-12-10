@@ -11,6 +11,7 @@ import org.starrier.domain.User;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+/*  将 UserService 标注为 一个服务层的 Bean */
 public class UserService {
 	private UserDao userDao;
 	private LoginLogDao loginLogDao;

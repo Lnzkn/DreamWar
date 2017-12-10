@@ -14,7 +14,11 @@
     
     <!-- 扫描类包，将标注Spring注解的类自动转化Bean，同时完成Bean的注入 -->
     <context:component-scan base-package="org.starrier.dao"/>
+	<!-- 扫描 Service 类包 应用Spring 的注解配置-->
     <context:component-scan base-package="org.starrier.service"/>
+
+
+
 
     <!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"

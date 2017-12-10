@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"	 xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context 
@@ -14,8 +14,12 @@
     
     <!-- 扫描类包，将标注Spring注解的类自动转化Bean，同时完成Bean的注入 -->
     <context:component-scan base-package="org.starrier.dao"/>
+	<!-- 扫描 Service 类包 应用Spring 的注解配置-->
     <context:component-scan base-package="org.starrier.service"/>
-    
+
+
+
+
     <!-- 配置数据源 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close" 
@@ -44,4 +48,21 @@
 			<tx:method name="*" />
 		</tx:attributes>
 	</tx:advice>
+
+	<!--ActiveMQ-->
+	<bean id="jndiTemplate" class="org.springframework.jndi.JndiTemplate">
+		<property name="environment">
+			<props>
+				<prop key="java.naming.factory.initial">org.springframework.activemq.jndi.ActiveMQInitialContextFactory</prop>
+				<prop key="java.naming.provider.util">tcp:localhost:61616</prop>
+				<prop key="java.naming,security.principal">system</prop>
+				<prop key="java.naming.security.credentials">manager</prop>
+			</props>
+		</property>
+	</bean>
+
+
+
 </beans>
+
+ 

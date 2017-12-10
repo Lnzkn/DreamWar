@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.starrier.domain.User;
 import org.starrier.service.UserService;
 
-@RestController
+@Controller  // 标注LoginController 成为一个Spring MVC 的Controller
 public class LoginController{
 	private UserService userService;
     
