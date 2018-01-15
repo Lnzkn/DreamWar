@@ -5,11 +5,13 @@
   <artifactId>dreamwar</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
+
+
   <name>dreamwar Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <!-- Tag 'dependencyManagement' Specify Dependent Maximum Version Start-->
-  <dependencyManagement>
+
     <dependencies>
       <!--common start -->
       <dependency>
@@ -123,7 +125,7 @@
       </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
-        <artifactId>spring-jdbc</artifactId>
+        <artifactId>spring-test</artifactId>
         <version>${spring.version}</version>
       </dependency>
       <!-- Spring Framework end-->
@@ -360,13 +362,21 @@
       <!-- REST ful API -->
 
     </dependencies>
-  </dependencyManagement>
+
   <!-- Tag 'dependencyManagement' Specify Dependent Maximum Version END-->
 
   <!-- Build Setting start -->
   <build>
+    <finalName>dreamwar</finalName>
+    <resources>
+      <resource>
+        <!-- directory : resource location -->
+        <directory>src/main/resources</directory>
+        <!--  While replace resource location or not -->
+        <filtering>true</filtering>
+      </resource>
+    </resources>
     <plugins>
-
       <!-- Inspect Maven Dependency Start-->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -387,12 +397,18 @@
         </executions>
       </plugin>
       <!-- Inspect Maven Dependency END -->
-
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.17</version>
-
+        <version>2.20.1</version>
         <configuration>
           <parallel>methods</parallel>
           <threadCount>10</threadCount>
@@ -400,14 +416,13 @@
       </plugin>
     </plugins>
 
-    <finalName>dreamwar</finalName>
   </build>
   <!-- Build Setting end  -->
 
   <!-- Dependency Framework Version Start -->
   <properties>
     <file.encoding>UTF-8</file.encoding>
-    <spring.version>4.2.2.RELEASE</spring.version>
+    <spring.version>4.3.13.RELEASE</spring.version>
     <mysql.version>5.1.29</mysql.version>
     <servlet.version>3.0-alpha-1</servlet.version>
     <aspectj.version>1.8.1</aspectj.version>
