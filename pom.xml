@@ -58,12 +58,6 @@
       <!-- Junit test end-->
 
       <dependency>
-        <groupId>commons-collections</groupId>
-        <artifactId>commons-collections</artifactId>
-        <version>3.2.1</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.quartz-scheduler</groupId>
         <artifactId>quartz</artifactId>
         <version>1.8.5</version>
@@ -250,21 +244,34 @@
       </dependency>
       <!-- Dubbo Framework end-->
 
-      <!-- Jetty start -->
+      <!-- Quartz Start-->
+      <dependency>
+        <groupId>org.quartz-scheduler</groupId>
+        <artifactId>quartz</artifactId>
+        <version>${quartz.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.quartz-scheduler</groupId>
+        <artifactId>quartz-jobs</artifactId>
+        <version>${quartz-job.version}</version>
+      </dependency>
+      <!-- Quartz End-->
+
+      <!-- Jetty Start -->
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-jndi</artifactId>
         <version>9.4.7.v20170914</version>
       </dependency>
-      <!--Jetty end -->
+      <!--Jetty End -->
 
-      <!-- ActiveMQ start-->
+      <!-- ActiveMQ Start-->
       <dependency>
         <groupId>org.apache.activemq</groupId>
         <artifactId>activemq-spring</artifactId>
         <version>5.15.2</version>
       </dependency>
-      <!-- ActiveMQ end-->
+      <!-- ActiveMQ End-->
 
       <!-- 依赖的连接池类库 -->
       <dependency>
@@ -291,14 +298,11 @@
         <version>${aspectj.version}</version>
       </dependency>
 
-
-
       <dependency>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>2.4.3</version>
       </dependency>
-
 
       <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
       <dependency>
@@ -307,7 +311,7 @@
         <version>6.0.5.Final</version>
       </dependency>
 
-      <!-- REST ful API -->
+      <!-- REST ful API Start-->
       <dependency>
         <groupId>ognl</groupId>
         <artifactId>ognl</artifactId>
@@ -331,7 +335,6 @@
         <artifactId>commons-beanutils</artifactId>
         <version>1.9.3</version>
       </dependency>
-
 
       <dependency>
         <groupId>commons-collections</groupId>
@@ -359,7 +362,7 @@
       </dependency>
 
       <!-- Transform Json End -->
-      <!-- REST ful API -->
+      <!-- REST ful API End -->
 
     </dependencies>
 
@@ -434,6 +437,8 @@
     <testng.version>6.8.7</testng.version>
     <jst1.version>1.2</jst1.version>
     <dubbo.version>2.5.6</dubbo.version>
+    <quartz.version>2.3.0</quartz.version>
+    <quartz-job.version>2.3.0</quartz-job.version>
   </properties>
   <!-- Dependency Framework Version end -->
 
