@@ -6,11 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DreamWar" />
+        <module name="dreamwar-business" />
+        <module name="dreamwar-commom" />
+        <module name="dreamwar-management" />
+        <module name="dreamwar-msgserver" />
+        <module name="dreamwar-taskserver" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DreamWar" target="1.8" />
+      <module name="dreamwar-business" target="1.8" />
+      <module name="dreamwar-commom" target="1.8" />
+      <module name="dreamwar-management" target="1.8" />
+      <module name="dreamwar-msgserver" target="1.8" />
+      <module name="dreamwar-service" target="1.8" />
+      <module name="dreamwar-taskserver" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DreamWar.iml" filepath="$PROJECT_DIR$/DreamWar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DreamWar/DreamWar.iml" filepath="$PROJECT_DIR$/../DreamWar/DreamWar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DreamWar/dreamwar-business/dreamwar-business.iml" filepath="$PROJECT_DIR$/../DreamWar/dreamwar-business/dreamwar-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DreamWar/dreamwar-commom/dreamwar-commom.iml" filepath="$PROJECT_DIR$/../DreamWar/dreamwar-commom/dreamwar-commom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DreamWar/dreamwar-management/dreamwar-management.iml" filepath="$PROJECT_DIR$/../DreamWar/dreamwar-management/dreamwar-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DreamWar/dreamwar-msgserver/dreamwar-msgserver.iml" filepath="$PROJECT_DIR$/../DreamWar/dreamwar-msgserver/dreamwar-msgserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DreamWar/dreamwar-taskserver/dreamwar-taskserver.iml" filepath="$PROJECT_DIR$/../DreamWar/dreamwar-taskserver/dreamwar-taskserver.iml" />
     </modules>
   </component>
 </project>
