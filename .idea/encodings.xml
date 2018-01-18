@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../DreamWar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-activemq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-business" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-commom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-management" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-msgserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-quartz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-shiro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-taskserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../DreamWar/dreamwar-web" charset="UTF-8" />
+  </component>
+</project>

@@ -3,15 +3,63 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.starrier</groupId>
   <artifactId>dreamwar</artifactId>
-  <packaging>war</packaging>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
 
+  <modules>
+    <!-- 工程的核心模块 提供对各终端的服务 -->
+    <module>dreamwar-business</module>
+    <!-- 公共组件部分，一些常量或第三方接入的工作可以在这里实现。 -->
+    <module>dreamwar-commom</module>
+    <!-- 管理台，主要提供一些对业务编排、配置的的功能 -->
+    <module>dreamwar-management</module>
+
+    <module>dreamwar-redis</module>
+    <!-- 批处理或定时任务服务器，独立运行 -->
+    <module>dreamwar-quartz</module>
+
+    <module>dreamwar-shiro</module>
+    <!-- 前端服务器，主要完成渲染和呈现的功能。一些像报表这样轻业务的功能可以在这里独立完成。以war包形式发行，支持集群部署。 -->
+    <module>dreamwar-web</module>
+    <!--消息队列服务器，主要用来协助核心服务模块完成一些异步调用的工作。如发短信、消息推送等功能。 -->
+    <module>dreamwar-activemq</module>
+    <!-- 核心服务的提供者，基本上所有的业务操作都由它来完成，以war工程独立运行。集群方式下可以多部署几个api，在前端做好负载均衡即可 -->
+    <module>dreamwar-api</module>
+    <!--  和 business-dao(mapper&entity) 是api的具体实现，这2者以jar包的形式供api依赖调用。 -->
+    <module>dreamwar-service</module>
+    <!-- 存放了对外的接口契约(intf)、请求(request)和响应体(response)，以jar包发行，方便供第三方或其他业务模块调用。 -->
+    <module>dreamwar-message</module>
+  </modules>
+
+    <!-- Dependency Framework Version Start -->
+    <properties>
+      <!--指定Maven用什么编码来读取源码及文档 -->
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <!--指定Maven用什么编码来呈现站点的HTML文件 -->
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <file.encoding>UTF-8</file.encoding>
+        <spring.version>4.3.13.RELEASE</spring.version>
+        <mysql.version>5.1.29</mysql.version>
+        <servlet.version>3.0-alpha-1</servlet.version>
+        <aspectj.version>1.8.1</aspectj.version>
+        <commons-codec.version>1.9</commons-codec.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <hibernate.validator.version>5.0.2.Final</hibernate.validator.version>
+        <jetty.version>8.1.8.v20121106</jetty.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <testng.version>6.8.7</testng.version>
+        <jst1.version>1.2</jst1.version>
+        <dubbo.version>2.5.6</dubbo.version>
+        <quartz.version>2.3.0</quartz.version>
+        <quartz-job.version>2.3.0</quartz-job.version>
+    </properties>
+    <!-- Dependency Framework Version end -->
 
   <name>dreamwar Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <!-- Tag 'dependencyManagement' Specify Dependent Maximum Version Start-->
-
+  <dependencyManagement>
     <dependencies>
       <!--common start -->
       <dependency>
@@ -365,7 +413,7 @@
       <!-- REST ful API End -->
 
     </dependencies>
-
+  </dependencyManagement>
   <!-- Tag 'dependencyManagement' Specify Dependent Maximum Version END-->
 
   <!-- Build Setting start -->
@@ -422,24 +470,5 @@
   </build>
   <!-- Build Setting end  -->
 
-  <!-- Dependency Framework Version Start -->
-  <properties>
-    <file.encoding>UTF-8</file.encoding>
-    <spring.version>4.3.13.RELEASE</spring.version>
-    <mysql.version>5.1.29</mysql.version>
-    <servlet.version>3.0-alpha-1</servlet.version>
-    <aspectj.version>1.8.1</aspectj.version>
-    <commons-codec.version>1.9</commons-codec.version>
-    <commons-dbcp.version>1.4</commons-dbcp.version>
-    <hibernate.validator.version>5.0.2.Final</hibernate.validator.version>
-    <jetty.version>8.1.8.v20121106</jetty.version>
-    <slf4j.version>1.7.5</slf4j.version>
-    <testng.version>6.8.7</testng.version>
-    <jst1.version>1.2</jst1.version>
-    <dubbo.version>2.5.6</dubbo.version>
-    <quartz.version>2.3.0</quartz.version>
-    <quartz-job.version>2.3.0</quartz-job.version>
-  </properties>
-  <!-- Dependency Framework Version end -->
 
 </project>
