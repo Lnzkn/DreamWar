@@ -9,7 +9,7 @@
         <module name="dreamwar-activemq" />
         <module name="dreamwar-api" />
         <module name="dreamwar-business" />
-        <module name="dreamwar-commom" />
+        <module name="dreamwar-common" />
         <module name="dreamwar-management" />
         <module name="dreamwar-message" />
         <module name="dreamwar-quartz" />
@@ -26,6 +26,7 @@
       <module name="dreamwar-api" target="1.8" />
       <module name="dreamwar-business" target="1.8" />
       <module name="dreamwar-commom" target="1.8" />
+      <module name="dreamwar-common" target="1.8" />
       <module name="dreamwar-management" target="1.8" />
       <module name="dreamwar-message" target="1.8" />
       <module name="dreamwar-msgserver" target="1.8" />

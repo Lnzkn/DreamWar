@@ -10,7 +10,7 @@
     <!-- 工程的核心模块 提供对各终端的服务 -->
     <module>dreamwar-business</module>
     <!-- 公共组件部分，一些常量或第三方接入的工作可以在这里实现。 -->
-    <module>dreamwar-commom</module>
+    <module>dreamwar-common</module>
     <!-- 管理台，主要提供一些对业务编排、配置的的功能 -->
     <module>dreamwar-management</module>
 
@@ -29,6 +29,7 @@
     <module>dreamwar-service</module>
     <!-- 存放了对外的接口契约(intf)、请求(request)和响应体(response)，以jar包发行，方便供第三方或其他业务模块调用。 -->
     <module>dreamwar-message</module>
+
   </modules>
 
     <!-- Dependency Framework Version Start -->
