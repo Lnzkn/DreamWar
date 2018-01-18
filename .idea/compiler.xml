@@ -6,21 +6,35 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dreamwar-activemq" />
+        <module name="dreamwar-api" />
         <module name="dreamwar-business" />
         <module name="dreamwar-commom" />
         <module name="dreamwar-management" />
-        <module name="dreamwar-msgserver" />
+        <module name="dreamwar-message" />
+        <module name="dreamwar-quartz" />
+        <module name="dreamwar-redis" />
+        <module name="dreamwar-service" />
+        <module name="dreamwar-shiro" />
         <module name="dreamwar-taskserver" />
+        <module name="dreamwar-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DreamWar" target="1.8" />
+      <module name="dreamwar-activemq" target="1.8" />
+      <module name="dreamwar-api" target="1.8" />
       <module name="dreamwar-business" target="1.8" />
       <module name="dreamwar-commom" target="1.8" />
       <module name="dreamwar-management" target="1.8" />
+      <module name="dreamwar-message" target="1.8" />
       <module name="dreamwar-msgserver" target="1.8" />
+      <module name="dreamwar-quartz" target="1.8" />
+      <module name="dreamwar-redis" target="1.8" />
       <module name="dreamwar-service" target="1.8" />
+      <module name="dreamwar-shiro" target="1.8" />
       <module name="dreamwar-taskserver" target="1.8" />
+      <module name="dreamwar-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

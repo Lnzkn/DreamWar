@@ -2,10 +2,14 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="dreamwar@localhost" uuid="ff7fac1c-a1c6-43bb-afe4-ee29459d1b14">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <database-info product="MySQL" version="5.7.18-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
       <user-name>Starrier</user-name>
+      <introspection-schemas>*:dreamwar</introspection-schemas>
     </data-source>
   </component>
 </project>

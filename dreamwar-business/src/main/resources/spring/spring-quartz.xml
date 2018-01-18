@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!-- 在 Spring 中配置一个 JobDetail  -->
+    <bean  name="jobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean"
+            p:jobClass="org.starrier.dreamwar.quartz.MyJob"
+            p:applicationContextJobDataKey="applicationContext">
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="size" value="10"/>
+            </map>
+        </property>
+    </bean>
+
+
+    <!--引用业务类方法的实现类-->
+    <bean id="jobDetail_1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
+       p:targetObject-ref="myService"
+       p:targetMethod="doJob"
+       p:concurrent="false"/>
+    <bean id="myService" class="org.starrier.dreamwar.service.MyService"/>
+
+    <!--设置jobDataMap -->
+    <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"
+          p:jobDetail-ref="jobDetail"
+          p:startDelay="1000"
+          p:repeatInterval="2000"
+          p:repeatCount="100">
+        <!-- Map 数据将填充到Trigger的 JobDataMap 中 -->
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="count" value="10"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- SchedulerFactoryBean 配置 -->
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="simpleTrigger"/>
+            </list>
+        </property>
+        <property name="schedulerContextAsMap">
+            <map>
+                <entry key="timeout" value="30"/>
+            </map>
+        </property>
+        <!-- 显式指定 Quartz 的配置文件地址 -->
+        <property name="configLocation" value="classpath:org/starrier/dreamwar/quartz/quartz.properties"/>
+    </bean>
+
+  <!--  &lt;!&ndash; quartzProperties 配置 &ndash;&gt;
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="quartzProperties">
+            <props>
+                <prop key="org.quartz.threadPool.class">
+                    org.quartz.simpl.SimpleThreadPool
+                </prop>
+                <prop key="org.quartz.threadPool.threadCount">10</prop>
+            </props>
+        </property>
+    </bean>
+    -->
+
+</beans>
