@@ -47,6 +47,8 @@
           <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-api:1.0.8" />
           <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-runtime:1.0.8" />
           <element id="library" level="project" name="Maven: com.dyuproject.protostuff:protostuff-collectionschema:1.0.8" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

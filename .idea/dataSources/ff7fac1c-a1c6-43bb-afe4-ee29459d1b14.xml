@@ -20,5 +20,61 @@
     <schema id="14" parent="1" name="sys"/>
     <schema id="15" parent="1" name="test"/>
     <schema id="16" parent="1" name="world"/>
+    <table id="17" parent="2" name="t_login_log"/>
+    <table id="18" parent="2" name="t_user"/>
+    <column id="19" parent="17" name="login_log_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="17" name="user_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="21" parent="17" name="ip">
+      <Position>3</Position>
+      <DataType>varchar(23)|0</DataType>
+    </column>
+    <column id="22" parent="17" name="login_datetime">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="23" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>login_log_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="18" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="18" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="26" parent="18" name="password">
+      <Position>3</Position>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="27" parent="18" name="credits">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="28" parent="18" name="last_visit">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="29" parent="18" name="last_ip">
+      <Position>6</Position>
+      <DataType>varchar(23)|0</DataType>
+    </column>
+    <key id="30" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
