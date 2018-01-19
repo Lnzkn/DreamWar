@@ -22,3 +22,4 @@ www.dreamwar.org
  >[Tomcat](http://tomcat.apache.org/)<br>
  >[Nginx](http://nginx.org/en/) <br>
  >[zookeeper](https://zookeeper.apache.org) <br>
+ >[Jenkins](https://jenkins.io/)持续集成
