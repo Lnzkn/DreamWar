@@ -244,6 +244,11 @@
         </dependency>
         <!-- Mybatis Data Access end -->
 
+        <!-- 依赖的连接池类库 -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
